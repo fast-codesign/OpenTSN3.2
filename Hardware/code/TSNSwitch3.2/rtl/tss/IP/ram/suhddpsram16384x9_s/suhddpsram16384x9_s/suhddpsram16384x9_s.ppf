@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="ram_2port_0"
+ megafunction_name="RAM_2PORT"
+ intended_family="Arria 10"
+ specifies="all_ports">
+ <global>
+  <pin name="data_a[8..0]" direction="input" scope="external" />
+  <pin name="data_b[8..0]" direction="input" scope="external" />
+  <pin name="address_a[13..0]" direction="input" scope="external" />
+  <pin name="address_b[13..0]" direction="input" scope="external" />
+  <pin name="wren_a" direction="input" scope="external" />
+  <pin name="wren_b" direction="input" scope="external" />
+  <pin name="clock" direction="input" scope="external" />
+  <pin name="rden_a" direction="input" scope="external" />
+  <pin name="rden_b" direction="input" scope="external" />
+  <pin name="aclr" direction="input" scope="external" />
+  <pin name="q_a[8..0]" direction="output" scope="external" />
+  <pin name="q_b[8..0]" direction="output" scope="external" />
+ </global>
+</pinplan>

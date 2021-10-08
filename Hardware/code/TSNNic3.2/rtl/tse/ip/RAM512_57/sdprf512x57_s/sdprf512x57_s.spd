@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="ram_2port_191/sim/sdprf512x57_s_ram_2port_191_xvvq7qa.v"
+   type="VERILOG"
+   library="sdprf512x57_s_ram_2port_191" />
+ <file
+   path="sim/sdprf512x57_s.v"
+   type="VERILOG"
+   hasInlineConfiguration="true" />
+ <topLevel name="sdprf512x57_s" />
+ <deviceFamily name="arria10" />
+</simPackage>

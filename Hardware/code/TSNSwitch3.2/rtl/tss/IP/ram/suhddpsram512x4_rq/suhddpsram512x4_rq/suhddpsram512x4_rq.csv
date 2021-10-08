@@ -1,0 +1,18 @@
+# system info suhddpsram512x4_rq on 2020.10.17.10:52:27
+system_info:
+name,value
+DEVICE,10AS016C3U19E2LG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1602903147
+#
+#
+# Files generated for suhddpsram512x4_rq on 2020.10.17.10:52:27
+files:
+filepath,kind,attributes,module,is_top
+sim/suhddpsram512x4_rq.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,suhddpsram512x4_rq,true
+ram_2port_191/sim/suhddpsram512x4_rq_ram_2port_191_gytxvfq.v,VERILOG,,suhddpsram512x4_rq_ram_2port_191_gytxvfq,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+suhddpsram512x4_rq.ram_2port_0,suhddpsram512x4_rq_ram_2port_191_gytxvfq

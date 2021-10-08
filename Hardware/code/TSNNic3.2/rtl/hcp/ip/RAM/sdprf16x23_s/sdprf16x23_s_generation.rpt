@@ -1,0 +1,43 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate F:\soft\quartus\sdprf16x23_s.qsys --block-symbol-file --output-directory=F:\soft\quartus\sdprf16x23_s --family="Arria 10" --part=10AX048H2F34E2SG
+Progress: Loading quartus/sdprf16x23_s.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.0]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: sdprf16x23_s.ram_2port_0: Targeting device family: Arria 10.
+: sdprf16x23_s.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: sdprf16x23_s.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate F:\soft\quartus\sdprf16x23_s.qsys --synthesis=VERILOG --output-directory=F:\soft\quartus\sdprf16x23_s --family="Arria 10" --part=10AX048H2F34E2SG
+Progress: Loading quartus/sdprf16x23_s.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.0]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: sdprf16x23_s.ram_2port_0: Targeting device family: Arria 10.
+: sdprf16x23_s.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: sdprf16x23_s.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: sdprf16x23_s: "Transforming system: sdprf16x23_s"
+Info: sdprf16x23_s: Running transform generation_view_transform
+Info: sdprf16x23_s: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: sdprf16x23_s: Running transform merlin_avalon_transform
+Info: sdprf16x23_s: Running transform merlin_avalon_transform took 0.121s
+Info: sdprf16x23_s: "Naming system components in system: sdprf16x23_s"
+Info: sdprf16x23_s: "Processing generation queue"
+Info: sdprf16x23_s: "Generating: sdprf16x23_s"
+Info: sdprf16x23_s: "Generating: sdprf16x23_s_ram_2port_150_z6r4j6y"
+Info: sdprf16x23_s: Done "sdprf16x23_s" with 2 modules, 3 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

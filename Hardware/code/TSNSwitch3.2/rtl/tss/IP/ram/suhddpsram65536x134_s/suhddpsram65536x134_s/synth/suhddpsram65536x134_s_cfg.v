@@ -1,0 +1,5 @@
+config suhddpsram65536x134_s_cfg;
+		design suhddpsram65536x134_s;
+		instance suhddpsram65536x134_s.ram_2port_0 use suhddpsram65536x134_s_ram_2port_191.suhddpsram65536x134_s_ram_2port_191_pu2i72y;
+endconfig
+

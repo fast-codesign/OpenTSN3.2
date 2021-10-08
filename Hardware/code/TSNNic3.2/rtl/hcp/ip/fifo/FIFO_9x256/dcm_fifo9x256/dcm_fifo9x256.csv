@@ -1,0 +1,18 @@
+# system info dcm_fifo9x256 on 2021.01.23.16:11:07
+system_info:
+name,value
+DEVICE,10AX048H2F34E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1611389467
+#
+#
+# Files generated for dcm_fifo9x256 on 2021.01.23.16:11:07
+files:
+filepath,kind,attributes,module,is_top
+sim/dcm_fifo9x256.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,dcm_fifo9x256,true
+fifo_191/sim/dcm_fifo9x256_fifo_191_53aeptq.v,VERILOG,,dcm_fifo9x256_fifo_191_53aeptq,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+dcm_fifo9x256.fifo_0,dcm_fifo9x256_fifo_191_53aeptq

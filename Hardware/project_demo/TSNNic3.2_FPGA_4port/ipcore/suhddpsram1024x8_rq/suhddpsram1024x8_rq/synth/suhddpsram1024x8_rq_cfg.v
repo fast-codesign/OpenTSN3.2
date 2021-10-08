@@ -1,0 +1,5 @@
+config suhddpsram1024x8_rq_cfg;
+		design suhddpsram1024x8_rq;
+		instance suhddpsram1024x8_rq.ram_2port_0 use suhddpsram1024x8_rq_ram_2port_191.suhddpsram1024x8_rq_ram_2port_191_go2l72y;
+endconfig
+

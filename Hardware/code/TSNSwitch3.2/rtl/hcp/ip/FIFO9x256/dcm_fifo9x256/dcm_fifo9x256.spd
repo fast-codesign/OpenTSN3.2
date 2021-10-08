@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="fifo_191/sim/dcm_fifo9x256_fifo_191_53aeptq.v"
+   type="VERILOG"
+   library="dcm_fifo9x256_fifo_191" />
+ <file
+   path="sim/dcm_fifo9x256.v"
+   type="VERILOG"
+   hasInlineConfiguration="true" />
+ <topLevel name="dcm_fifo9x256" />
+ <deviceFamily name="arria10" />
+</simPackage>

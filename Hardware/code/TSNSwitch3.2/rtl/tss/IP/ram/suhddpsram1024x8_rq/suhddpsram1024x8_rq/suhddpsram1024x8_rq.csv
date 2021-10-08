@@ -1,0 +1,18 @@
+# system info suhddpsram1024x8_rq on 2020.10.17.10:54:11
+system_info:
+name,value
+DEVICE,10AS016C3U19E2LG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1602903251
+#
+#
+# Files generated for suhddpsram1024x8_rq on 2020.10.17.10:54:11
+files:
+filepath,kind,attributes,module,is_top
+sim/suhddpsram1024x8_rq.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,suhddpsram1024x8_rq,true
+ram_2port_191/sim/suhddpsram1024x8_rq_ram_2port_191_go2l72y.v,VERILOG,,suhddpsram1024x8_rq_ram_2port_191_go2l72y,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+suhddpsram1024x8_rq.ram_2port_0,suhddpsram1024x8_rq_ram_2port_191_go2l72y

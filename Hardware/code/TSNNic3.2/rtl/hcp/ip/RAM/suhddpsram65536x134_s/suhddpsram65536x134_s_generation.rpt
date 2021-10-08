@@ -1,0 +1,39 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\Administrator\Desktop\suhddpsram65536x134_s.qsys --block-symbol-file --output-directory=C:\Users\Administrator\Desktop\suhddpsram65536x134_s --family="Arria 10" --part=10AX048H2F34E2SG
+Progress: Loading Desktop/suhddpsram65536x134_s.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.0]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: suhddpsram65536x134_s.ram_2port_0: Targeting device family: Arria 10.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\Administrator\Desktop\suhddpsram65536x134_s.qsys --synthesis=VERILOG --output-directory=C:\Users\Administrator\Desktop\suhddpsram65536x134_s --family="Arria 10" --part=10AX048H2F34E2SG
+Progress: Loading Desktop/suhddpsram65536x134_s.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.0]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: suhddpsram65536x134_s.ram_2port_0: Targeting device family: Arria 10.
+Info: suhddpsram65536x134_s: "Transforming system: suhddpsram65536x134_s"
+Info: suhddpsram65536x134_s: Running transform generation_view_transform
+Info: suhddpsram65536x134_s: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: suhddpsram65536x134_s: Running transform merlin_avalon_transform
+Info: suhddpsram65536x134_s: Running transform merlin_avalon_transform took 0.100s
+Info: suhddpsram65536x134_s: "Naming system components in system: suhddpsram65536x134_s"
+Info: suhddpsram65536x134_s: "Processing generation queue"
+Info: suhddpsram65536x134_s: "Generating: suhddpsram65536x134_s"
+Info: suhddpsram65536x134_s: "Generating: suhddpsram65536x134_s_ram_2port_150_5kzzk4i"
+Info: suhddpsram65536x134_s: Done "suhddpsram65536x134_s" with 2 modules, 3 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

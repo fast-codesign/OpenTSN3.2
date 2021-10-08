@@ -1,0 +1,5 @@
+config suhddpsram512x4_rq_cfg;
+		design suhddpsram512x4_rq;
+		instance suhddpsram512x4_rq.ram_2port_0 use suhddpsram512x4_rq_ram_2port_150.suhddpsram512x4_rq_ram_2port_150_xzd5lly;
+endconfig
+

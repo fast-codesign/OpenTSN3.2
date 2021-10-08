@@ -1,0 +1,18 @@
+# system info suhddpsram65536x134_s on 2020.10.17.10:58:52
+system_info:
+name,value
+DEVICE,10AS016C3U19E2LG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1602903532
+#
+#
+# Files generated for suhddpsram65536x134_s on 2020.10.17.10:58:52
+files:
+filepath,kind,attributes,module,is_top
+sim/suhddpsram65536x134_s.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,suhddpsram65536x134_s,true
+ram_2port_191/sim/suhddpsram65536x134_s_ram_2port_191_pu2i72y.v,VERILOG,,suhddpsram65536x134_s_ram_2port_191_pu2i72y,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+suhddpsram65536x134_s.ram_2port_0,suhddpsram65536x134_s_ram_2port_191_pu2i72y

@@ -1,0 +1,132 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 304 232)
+	(text "ram_62_256" (rect 116 -1 167 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 216 20 228)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "data_a[61..0]" (rect 0 0 50 12)(font "Arial" (font_size 8)))
+		(text "data_a[61..0]" (rect 4 61 82 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 96 72)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "data_b[61..0]" (rect 0 0 50 12)(font "Arial" (font_size 8)))
+		(text "data_b[61..0]" (rect 4 77 82 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 96 88)(line_width 3))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "address_a[7..0]" (rect 0 0 62 12)(font "Arial" (font_size 8)))
+		(text "address_a[7..0]" (rect 4 93 94 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 96 104)(line_width 3))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "address_b[7..0]" (rect 0 0 62 12)(font "Arial" (font_size 8)))
+		(text "address_b[7..0]" (rect 4 109 94 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 96 120)(line_width 3))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "wren_a" (rect 0 0 29 12)(font "Arial" (font_size 8)))
+		(text "wren_a" (rect 4 125 40 136)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 96 136)(line_width 1))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "wren_b" (rect 0 0 29 12)(font "Arial" (font_size 8)))
+		(text "wren_b" (rect 4 141 40 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 96 152)(line_width 1))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "clock" (rect 0 0 20 12)(font "Arial" (font_size 8)))
+		(text "clock" (rect 4 157 34 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 96 168)(line_width 1))
+	)
+	(port
+		(pt 0 184)
+		(input)
+		(text "rden_a" (rect 0 0 28 12)(font "Arial" (font_size 8)))
+		(text "rden_a" (rect 4 173 40 184)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 96 184)(line_width 1))
+	)
+	(port
+		(pt 0 200)
+		(input)
+		(text "rden_b" (rect 0 0 28 12)(font "Arial" (font_size 8)))
+		(text "rden_b" (rect 4 189 40 200)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 96 200)(line_width 1))
+	)
+	(port
+		(pt 304 72)
+		(output)
+		(text "q_a[61..0]" (rect 0 0 38 12)(font "Arial" (font_size 8)))
+		(text "q_a[61..0]" (rect 255 61 315 72)(font "Arial" (font_size 8)))
+		(line (pt 304 72)(pt 208 72)(line_width 3))
+	)
+	(port
+		(pt 304 88)
+		(output)
+		(text "q_b[61..0]" (rect 0 0 38 12)(font "Arial" (font_size 8)))
+		(text "q_b[61..0]" (rect 255 77 315 88)(font "Arial" (font_size 8)))
+		(line (pt 304 88)(pt 208 88)(line_width 3))
+	)
+	(drawing
+		(text "ram_input" (rect 38 43 130 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "datain_a" (rect 101 67 250 144)(font "Arial" (color 0 0 0)))
+		(text "datain_b" (rect 101 83 250 176)(font "Arial" (color 0 0 0)))
+		(text "address_a" (rect 101 99 256 208)(font "Arial" (color 0 0 0)))
+		(text "address_b" (rect 101 115 256 240)(font "Arial" (color 0 0 0)))
+		(text "wren_a" (rect 101 131 238 272)(font "Arial" (color 0 0 0)))
+		(text "wren_b" (rect 101 147 238 304)(font "Arial" (color 0 0 0)))
+		(text "clock" (rect 101 163 232 336)(font "Arial" (color 0 0 0)))
+		(text "rden_a" (rect 101 179 238 368)(font "Arial" (color 0 0 0)))
+		(text "rden_b" (rect 101 195 238 400)(font "Arial" (color 0 0 0)))
+		(text "ram_output" (rect 209 43 478 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "dataout_a" (rect 163 67 380 144)(font "Arial" (color 0 0 0)))
+		(text "dataout_b" (rect 163 83 380 176)(font "Arial" (color 0 0 0)))
+		(text " ram_62_256 " (rect 247 216 566 442)(font "Arial" ))
+		(line (pt 96 32)(pt 208 32)(line_width 1))
+		(line (pt 208 32)(pt 208 216)(line_width 1))
+		(line (pt 96 216)(pt 208 216)(line_width 1))
+		(line (pt 96 32)(pt 96 216)(line_width 1))
+		(line (pt 97 52)(pt 97 204)(line_width 1))
+		(line (pt 98 52)(pt 98 204)(line_width 1))
+		(line (pt 207 52)(pt 207 92)(line_width 1))
+		(line (pt 206 52)(pt 206 92)(line_width 1))
+		(line (pt 0 0)(pt 304 0)(line_width 1))
+		(line (pt 304 0)(pt 304 232)(line_width 1))
+		(line (pt 0 232)(pt 304 232)(line_width 1))
+		(line (pt 0 0)(pt 0 232)(line_width 1))
+	)
+)

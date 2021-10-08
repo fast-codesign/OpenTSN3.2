@@ -1,0 +1,18 @@
+# system info sdprf512x57_s on 2021.06.24.15:03:47
+system_info:
+name,value
+DEVICE,10AX048H2F34E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1624518226
+#
+#
+# Files generated for sdprf512x57_s on 2021.06.24.15:03:47
+files:
+filepath,kind,attributes,module,is_top
+sim/sdprf512x57_s.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,sdprf512x57_s,true
+ram_2port_191/sim/sdprf512x57_s_ram_2port_191_xvvq7qa.v,VERILOG,,sdprf512x57_s_ram_2port_191_xvvq7qa,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+sdprf512x57_s.ram_2port_0,sdprf512x57_s_ram_2port_191_xvvq7qa

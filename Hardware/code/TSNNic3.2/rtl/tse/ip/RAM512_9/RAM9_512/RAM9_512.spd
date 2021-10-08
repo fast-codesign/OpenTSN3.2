@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="ram_2port_191/sim/RAM9_512_ram_2port_191_fb4km7q.v"
+   type="VERILOG"
+   library="RAM9_512_ram_2port_191" />
+ <file path="sim/RAM9_512.v" type="VERILOG" hasInlineConfiguration="true" />
+ <topLevel name="RAM9_512" />
+ <deviceFamily name="arria10" />
+</simPackage>
