@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="ram_2port_191/sim/suhddpsram65536x134_s_ram_2port_191_pu2i72y.v"
+   type="VERILOG"
+   library="suhddpsram65536x134_s_ram_2port_191" />
+ <file
+   path="sim/suhddpsram65536x134_s.v"
+   type="VERILOG"
+   hasInlineConfiguration="true" />
+ <topLevel name="suhddpsram65536x134_s" />
+ <deviceFamily name="arria10" />
+</simPackage>

@@ -516,16 +516,6 @@ localparam            IDLE_S           = 4'd0,
                     rv_report_cnt   <= 8'h0;
                     ov_nmac_data    <= iv_nmac_dmac[7:0];
                     
-                    nrm_state       <= ETH_S;
-                end
-            end
-            
-            ETH_S:begin
-                if(rv_report_cnt == 8'd0)begin//generate nmac pkt Ethernet first byte
-                    rv_report_cnt   <= rv_report_cnt + 8'h1;
-                    ov_nmac_data    <= 8'h16;
-                    nrm_state       <= ETH_S;
-                    
                     if(iv_report_type[15:10] == 6'h0)begin//report regist
                         o_rd_command_wr <= 1'b0;
                         ov_rd_command[203:0] <= 204'b0;
@@ -631,20 +621,24 @@ localparam            IDLE_S           = 4'd0,
                         ov_rd_command[203:0] <= 204'b0;
                     end                     
                     else begin//error
-                        nrm_state       <= IDLE_S;
+                        o_rd_command_wr <= 1'b0;
                     end                    
+                    nrm_state       <= ETH_S;
+                end
+            end
+            
+            ETH_S:begin
+                if(rv_report_cnt == 8'd0)begin//generate nmac pkt Ethernet first byte
+                    rv_report_cnt   <= rv_report_cnt + 8'h1;
+                    ov_nmac_data    <= 8'h16;
+                    nrm_state       <= ETH_S;
+                    o_rd_command_wr <= 1'b0;                                       
                 end
                 else if(rv_report_cnt == 8'd1)begin//generate nmac pkt Ethernet last byte
                     rv_report_cnt   <= rv_report_cnt + 8'h1;
                     ov_nmac_data    <= 8'h62;                
                     nrm_state       <= ETH_S;
-                    o_rd_command_wr <= 1'b0;                       
-                end
-                else if(rv_report_cnt == 8'd2)begin//generate nmac pkt report type first byte
-                    ov_nmac_data    <= iv_report_type[15:8];
-                    rv_report_cnt   <= rv_report_cnt + 8'h1;              
-                    nrm_state       <= ETH_S;
-                    
+
                     //start read table,because read ram have two cycle delay
                     if(iv_report_type[15:10] == 6'h0)begin//report regist
                         o_rd_command_wr <= 1'b0;  
@@ -704,36 +698,55 @@ localparam            IDLE_S           = 4'd0,
                     end                     
                     else begin//error
                         o_rd_command_wr <= 1'b0; 
-                        nrm_state       <= IDLE_S;
                     end                    
+                end
+                else if(rv_report_cnt == 8'd2)begin//generate nmac pkt report type first byte
+                    ov_nmac_data    <= iv_report_type[15:8];
+                    rv_report_cnt   <= rv_report_cnt + 8'h1;              
+                    nrm_state       <= ETH_S; 
+                    o_rd_command_wr <= 1'b0;                    
                 end
                 else begin//generate nmac pkt report type last byte
                     ov_nmac_data    <= iv_report_type[7:0];
                     rv_report_cnt   <= 8'h0;
-                    o_rd_command_wr <= 1'b0; 
+                     
                     if(iv_report_type[15:10] == 6'h0)begin//report regist
+                        o_rd_command_wr <= 1'b0;
                         nrm_state       <= REGIST_S;
                     end
                     else if(iv_report_type[15:10] == 6'h1)begin//report lookup table
+                        ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'h1;//addr
+                        o_rd_command_wr <= 1'b1; 
                         nrm_state   <= REPORT_S;
                     end
                     else if(iv_report_type[15:10] == 6'h2)begin//report inject table
+                        ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'h1;//addr
+                        o_rd_command_wr <= 1'b1;
                         nrm_state   <= REPORT_S;
                     end
                     else if(iv_report_type[15:10] == 6'h3)begin//report submit table
+                        ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'h1;//addr
+                        o_rd_command_wr <= 1'b1;
                         nrm_state   <= REPORT_S;
                     end
                     else if((iv_report_type[15:10] >= 6'd4) && (iv_report_type[15:10] <= 6'd11))begin//report gate table
+                        ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'h1;//addr
+                        o_rd_command_wr <= 1'b1;
                         nrm_state   <= REPORT_S;
                     end
                     else if(iv_report_type[15:10] == 6'd12)begin//report state regist
+                        o_rd_command_wr <= 1'b0;
                         nrm_state       <= STATE_S;
                         o_statistic_rst <= 1'b1;
                     end
                     else if(iv_report_type[15:10] == 6'd13)begin//report mapping table
+                        
+                        o_rd_command_wr <= 1'b0;
                         nrm_state   <= REPORT_MAPPING_TABLE_S;
                     end                     
                     else if(iv_report_type[15:10] == 6'd14)begin//report inverse mapping table
+                        
+                        o_rd_command_wr <= 1'b0;
                         nrm_state   <= REPORT_INVERSE_MAPPING_TABLE_S;
                     end 
                     else begin//error
@@ -923,7 +936,8 @@ localparam            IDLE_S           = 4'd0,
                         
                         8'd98:ov_nmac_data <= {iv_pkt_write_state,iv_pcb_pkt_read_state};
                         8'd99:ov_nmac_data <= {iv_address_write_state,iv_address_read_state};                   
-                        8'd100:ov_nmac_data <= {iv_free_buf_fifo_rdusedw[8:1]};
+                        8'd100:ov_nmac_data <= {iv_free_buf_fifo_rdusedw[8:1]};                                      
+                        
                         default:ov_nmac_data <= 8'd0;
                     endcase
                 end
@@ -932,7 +946,7 @@ localparam            IDLE_S           = 4'd0,
                     o_nmac_data_last  <= 1'h1;                    
                     rv_report_cnt     <= 8'd0;
                     nrm_state         <= IDLE_S;
-                end
+                end                
             end
                                   
             REPORT_S:begin//generate nmac pkt data base on table
@@ -942,52 +956,62 @@ localparam            IDLE_S           = 4'd0,
                     nrm_state    <= REPORT_S;
                     case(r_ram_byte)
                         1'd1:begin
-                            ov_nmac_data <= iv_rd_command_ack[15:8];
-                            ov_rd_command[183:152] <= ov_rd_command[183:152];//addr
-                            o_rd_command_wr <= 1'b0;
-                            rv_report_cnt   <= rv_report_cnt;
-                        end
-                        1'd0:begin
                             ov_nmac_data <= iv_rd_command_ack[7:0];
                             ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'b1;//addr
                             o_rd_command_wr <= 1'b1;
                             rv_report_cnt   <= rv_report_cnt + 8'h1;
+                        end
+                        1'd0:begin
+                            ov_nmac_data <= iv_rd_command_ack[15:8];
+                            ov_rd_command[183:152] <= ov_rd_command[183:152];//addr
+                            o_rd_command_wr <= 1'b0;
+                            rv_report_cnt   <= rv_report_cnt;
                         end 
                     endcase
                 end
                 else begin
                     ov_nmac_data <= iv_rd_command_ack[15:8];
-                    ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'b1;//addr
-                    o_rd_command_wr <= 1'b1;
+                    ov_rd_command[183:152] <= ov_rd_command[183:152];//addr
+                    o_rd_command_wr <= 1'b0;
                     nrm_state    <= WAIT_S;
                 end
             end
             
             WAIT_S:begin//generate nmac pkt data on table
                 o_rd_command_wr <= 1'b0;
-                if(rv_report_cnt < 8'd32)begin
+                if(rv_report_cnt == 8'd30)begin
                     nrm_state    <= WAIT_S;
                     r_ram_byte      <= r_ram_byte + 1'b1;
                     case(r_ram_byte)
                         1'd1:begin
-                            ov_nmac_data <= iv_rd_command_ack[15:8];
-                            rv_report_cnt   <= rv_report_cnt;
-                        end
-                        1'd0:begin
                             ov_nmac_data <= iv_rd_command_ack[7:0];
                             rv_report_cnt   <= rv_report_cnt + 8'h1;
+                        end
+                        1'd0:begin
+                            ov_nmac_data <= iv_rd_command_ack[15:8];
+                            rv_report_cnt   <= rv_report_cnt;
                         end 
                     endcase
                 end
                 else begin
-                    ov_nmac_data <= iv_rd_command_ack[15:8];
-                    o_nmac_data_last  <= 1'h1;
-                    nrm_state    <= IDLE_S;
-                end
+                    r_ram_byte      <= r_ram_byte + 1'b1;
+                    case(r_ram_byte)
+                        1'd1:begin
+                            ov_nmac_data <= iv_rd_command_ack[7:0];
+                            o_nmac_data_last  <= 1'h1;
+                            nrm_state    <=  IDLE_S;
+                        end
+                        1'd0:begin
+                            ov_nmac_data <= iv_rd_command_ack[15:8];
+                            o_nmac_data_last  <= 1'h0;
+                            rv_report_cnt   <= rv_report_cnt;
+                        end 
+                    endcase
+                end                
             end
             REPORT_MAPPING_TABLE_S:begin
                 rv_report_cnt   <= rv_report_cnt + 8'h1;
-                if(rv_report_cnt == 8'd8)begin   
+                if(rv_report_cnt == 8'd7)begin   
                     o_rd_command_wr <= 1'b1;
                     ov_rd_command[203:196] <= 8'b0;
                     ov_rd_command[195:188] <= 8'd13;
@@ -995,7 +1019,7 @@ localparam            IDLE_S           = 4'd0,
                     ov_rd_command[183:152] <= ({22'b0,iv_report_type[9:0]} << 1);//addr
                     ov_rd_command[151:0] <= 152'b0;  
                 end
-                else if(rv_report_cnt == 8'd40)begin
+                else if(rv_report_cnt == 8'd39)begin
                     o_rd_command_wr <= 1'b1;
                     ov_rd_command[203:196] <= 8'b0;
                     ov_rd_command[195:188] <= 8'd13;
@@ -1008,66 +1032,66 @@ localparam            IDLE_S           = 4'd0,
                     ov_rd_command <= 204'b0;                 
                 end
                 
-                if(rv_report_cnt[4:0] < 5'd13)begin
+                if(rv_report_cnt[4:0] < 5'd12)begin
                     ov_nmac_data <= 8'b0;
                 end
-                else if((rv_report_cnt[4:0] > 5'd12) && (rv_report_cnt[4:0] <= 5'd31))begin
+                else if((rv_report_cnt[4:0] > 5'd11) && (rv_report_cnt[4:0] <= 5'd30))begin
                     case(rv_report_cnt[4:0])
-                        5'd13:begin
+                        5'd12:begin
                             ov_nmac_data <= iv_rd_command_ack[151:144];
                         end
-                        5'd14:begin
+                        5'd13:begin
                             ov_nmac_data <= iv_rd_command_ack[143:136];
                         end
-                        5'd15:begin
+                        5'd14:begin
                             ov_nmac_data <= iv_rd_command_ack[135:128];
                         end
-                        5'd16:begin
+                        5'd15:begin
                             ov_nmac_data <= iv_rd_command_ack[127:120];
                         end
-                        5'd17:begin
+                        5'd16:begin
                             ov_nmac_data <= iv_rd_command_ack[119:112];
                         end
-                        5'd18:begin
+                        5'd17:begin
                             ov_nmac_data <= iv_rd_command_ack[111:104];
                         end
-                        5'd19:begin
+                        5'd18:begin
                             ov_nmac_data <= iv_rd_command_ack[103:96];
                         end
-                        5'd20:begin
+                        5'd19:begin
                             ov_nmac_data <= iv_rd_command_ack[95:88];
                         end
-                        5'd21:begin
+                        5'd20:begin
                             ov_nmac_data <= iv_rd_command_ack[87:80];
                         end
-                        5'd22:begin
+                        5'd21:begin
                             ov_nmac_data <= iv_rd_command_ack[79:72];
                         end
-                        5'd23:begin
+                        5'd22:begin
                             ov_nmac_data <= iv_rd_command_ack[71:64];
                         end
-                        5'd24:begin
+                        5'd23:begin
                             ov_nmac_data <= iv_rd_command_ack[63:56];
                         end
-                        5'd25:begin
+                        5'd24:begin
                             ov_nmac_data <= iv_rd_command_ack[55:48];
                         end
-                        5'd26:begin
+                        5'd25:begin
                             ov_nmac_data <= iv_rd_command_ack[47:40];
                         end
-                        5'd27:begin
+                        5'd26:begin
                             ov_nmac_data <= iv_rd_command_ack[39:32];
                         end
-                        5'd28:begin
+                        5'd27:begin
                             ov_nmac_data <= iv_rd_command_ack[31:24];
                         end
-                        5'd29:begin
+                        5'd28:begin
                             ov_nmac_data <= iv_rd_command_ack[23:16];
                         end
-                        5'd30:begin
+                        5'd29:begin
                             ov_nmac_data <= iv_rd_command_ack[15:8];
                         end
-                        5'd31:begin
+                        5'd30:begin
                             ov_nmac_data <= iv_rd_command_ack[7:0];
                         end
                     endcase
@@ -1083,7 +1107,7 @@ localparam            IDLE_S           = 4'd0,
             end
             REPORT_INVERSE_MAPPING_TABLE_S:begin
                 rv_report_cnt   <= rv_report_cnt + 8'h1;
-                if(rv_report_cnt == 8'd2)begin   
+                if(rv_report_cnt == 8'd1)begin   
                     o_rd_command_wr <= 1'b1;
                     ov_rd_command[203:196] <= 8'b0;
                     ov_rd_command[195:188] <= 8'd14;
@@ -1091,7 +1115,7 @@ localparam            IDLE_S           = 4'd0,
                     ov_rd_command[183:152] <= ({22'b0,iv_report_type[9:0]} << 2);//addr
                     ov_rd_command[151:0] <= 152'b0;  
                 end
-                else if(rv_report_cnt == 8'd18)begin
+                else if(rv_report_cnt == 8'd17)begin
                     o_rd_command_wr <= 1'b1;
                     ov_rd_command[203:196] <= 8'b0;
                     ov_rd_command[195:188] <= 8'd14;
@@ -1099,7 +1123,7 @@ localparam            IDLE_S           = 4'd0,
                     ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'b1;//addr
                     ov_rd_command[151:0] <= 152'b0;                  
                 end
-                else if(rv_report_cnt == 8'd34)begin
+                else if(rv_report_cnt == 8'd33)begin
                     o_rd_command_wr <= 1'b1;
                     ov_rd_command[203:196] <= 8'b0;
                     ov_rd_command[195:188] <= 8'd14;
@@ -1107,7 +1131,7 @@ localparam            IDLE_S           = 4'd0,
                     ov_rd_command[183:152] <= ov_rd_command[183:152] + 1'b1;//addr
                     ov_rd_command[151:0] <= 152'b0;                  
                 end
-                else if(rv_report_cnt == 8'd50)begin
+                else if(rv_report_cnt == 8'd49)begin
                     o_rd_command_wr <= 1'b1;
                     ov_rd_command[203:196] <= 8'b0;
                     ov_rd_command[195:188] <= 8'd14;
@@ -1120,41 +1144,41 @@ localparam            IDLE_S           = 4'd0,
                     ov_rd_command <= 204'b0;                 
                 end
                 
-                if(rv_report_cnt[3:0] < 4'd6)begin
+                if(rv_report_cnt[3:0] < 4'd5)begin
                     ov_nmac_data <= 8'b0;
                     o_nmac_data_last  <= 1'h0;
                 end
-                else if((rv_report_cnt[3:0] > 4'd5) && (rv_report_cnt[3:0] <= 4'd15))begin
+                else if((rv_report_cnt[3:0] > 4'd4) && (rv_report_cnt[3:0] <= 4'd14))begin
                     o_nmac_data_last  <= 1'h0;
                     case(rv_report_cnt)
-                        8'd6:begin
+                        8'd5:begin
                             ov_nmac_data <= {2'b0,iv_rd_command_ack[77:72]};
                         end
-                        8'd7:begin
+                        8'd6:begin
                             ov_nmac_data <= iv_rd_command_ack[71:64];
                         end
-                        8'd8:begin
+                        8'd7:begin
                             ov_nmac_data <= iv_rd_command_ack[63:56];
                         end
-                        8'd9:begin
+                        8'd8:begin
                             ov_nmac_data <= iv_rd_command_ack[55:48];
                         end
-                        8'd10:begin
+                        8'd9:begin
                             ov_nmac_data <= iv_rd_command_ack[47:40];
                         end
-                        8'd11:begin
+                        8'd10:begin
                             ov_nmac_data <= iv_rd_command_ack[39:32];
                         end
-                        8'd12:begin
+                        8'd11:begin
                             ov_nmac_data <= iv_rd_command_ack[31:24];
                         end
-                        8'd13:begin
+                        8'd12:begin
                             ov_nmac_data <= iv_rd_command_ack[23:16];
                         end
-                        8'd14:begin 
+                        8'd13:begin
                             ov_nmac_data <= iv_rd_command_ack[15:8];
                         end
-                        8'd15:begin
+                        8'd14:begin
                             ov_nmac_data <= iv_rd_command_ack[7:0];
                         end
                     endcase

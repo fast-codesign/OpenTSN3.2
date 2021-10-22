@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<qsys_generation_info>
+<qsys_file path="C:/share/zyc/OpenTSN3.2/Hardware/project_demo/TSNSwitch3.2_FPGA_4port/ipcore/sdprf512x9_s/sdprf512x9_s.qsys" />
+<gen_dir path="C:/share/zyc/OpenTSN3.2/Hardware/project_demo/TSNSwitch3.2_FPGA_4port/ipcore/sdprf512x9_s/sdprf512x9_s/" />
+<user_regen_policy value="Never Regenerate Existing IP" />
+<actual_regen_policy value="Never Regenerate Existing IP" />
+<gen_action value="IP Generation Skipped" />
+<gen_status value="IP Generation Succeeded" />
+</qsys_generation_info>

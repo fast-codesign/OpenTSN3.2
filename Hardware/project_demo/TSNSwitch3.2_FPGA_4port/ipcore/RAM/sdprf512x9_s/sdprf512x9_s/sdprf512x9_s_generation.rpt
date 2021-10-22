@@ -1,0 +1,90 @@
+Info: Starting: Create simulation model
+Info: qsys-generate E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s --family="Arria 10" --part=10AS016C3U19E2LG
+Progress: Loading sdprf512x9_s/sdprf512x9_s.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 19.1]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: sdprf512x9_s.ram_2port_0: Targeting device family: Arria 10.
+: sdprf512x9_s.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: sdprf512x9_s.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: sdprf512x9_s: "Transforming system: sdprf512x9_s"
+Info: sdprf512x9_s: Running transform generation_view_transform
+Info: sdprf512x9_s: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: sdprf512x9_s: Running transform merlin_avalon_transform
+Info: sdprf512x9_s: Running transform merlin_avalon_transform took 0.068s
+Info: sdprf512x9_s: "Naming system components in system: sdprf512x9_s"
+Info: sdprf512x9_s: "Processing generation queue"
+Info: sdprf512x9_s: "Generating: sdprf512x9_s"
+Info: sdprf512x9_s: "Generating: sdprf512x9_s_ram_2port_191_fvxmdzi"
+Info: sdprf512x9_s: Done "sdprf512x9_s" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s\sdprf512x9_s.spd --output-directory=E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s\sdprf512x9_s.spd --output-directory=E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under E:/altera/quartus19.1/quartus/bin64/sdprf512x9_s/sdprf512x9_s/sim/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s.qsys --block-symbol-file --output-directory=E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s --family="Arria 10" --part=10AS016C3U19E2LG
+Progress: Loading sdprf512x9_s/sdprf512x9_s.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 19.1]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: sdprf512x9_s.ram_2port_0: Targeting device family: Arria 10.
+: sdprf512x9_s.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: sdprf512x9_s.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s.qsys --synthesis=VERILOG --output-directory=E:\altera\quartus19.1\quartus\bin64\sdprf512x9_s\sdprf512x9_s --family="Arria 10" --part=10AS016C3U19E2LG
+Progress: Loading sdprf512x9_s/sdprf512x9_s.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 19.1]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: sdprf512x9_s.ram_2port_0: Targeting device family: Arria 10.
+: sdprf512x9_s.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: sdprf512x9_s.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: sdprf512x9_s: "Transforming system: sdprf512x9_s"
+Info: sdprf512x9_s: Running transform generation_view_transform
+Info: sdprf512x9_s: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: sdprf512x9_s: Running transform merlin_avalon_transform
+Info: sdprf512x9_s: Running transform merlin_avalon_transform took 0.051s
+Info: sdprf512x9_s: "Naming system components in system: sdprf512x9_s"
+Info: sdprf512x9_s: "Processing generation queue"
+Info: sdprf512x9_s: "Generating: sdprf512x9_s"
+Info: sdprf512x9_s: "Generating: sdprf512x9_s_ram_2port_191_fvxmdzi"
+Info: sdprf512x9_s: Done "sdprf512x9_s" with 2 modules, 3 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

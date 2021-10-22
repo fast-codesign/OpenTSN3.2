@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_plan_cfg>
+<!--文本中节点的先后顺序必须与配置顺序保持一致，配置顺序需要按照离控制器由近到远依次配置-->
+<switch>
+	<IMAC>2</IMAC><!--TSN主交换机的imac为30 -->
+	<gate_control_list_table> 
+		<port_id>1</port_id><!-- 0号端口门控表 -->
+		<entry>
+			<time_slot>0</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>1</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>2</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>3</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+	</gate_control_list_table>
+	<gate_control_list_table> 
+		<port_id>0</port_id><!-- 0号端口门控表 -->
+		<entry>
+			<time_slot>0</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>1</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>2</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>3</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+	</gate_control_list_table>
+
+</switch>
+
+<switch>
+	<IMAC>3</IMAC><!-- TSN交换机0交换机的imac为2 -->
+	<forwarding_table>   <!-- 转发表 -->
+		<entry> 
+			<flowid>15</flowid> 
+			<outport>5</outport>  <!-- 组播，分别向MCU0，和MCU1发送 -->
+		</entry>
+		
+	</forwarding_table>
+		
+	<gate_control_list_table> 
+		<port_id>0</port_id><!-- 0号端口门控表 -->
+		<entry>
+			<time_slot>0</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>1</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>2</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>3</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>	
+	</gate_control_list_table>
+	<gate_control_list_table> 
+		<port_id>2</port_id><!-- 0号端口门控表 -->
+		<entry>
+			<time_slot>0</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>1</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>2</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>3</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>	
+	</gate_control_list_table>	
+</switch>
+
+<switch>
+	<IMAC>4</IMAC><!-- TSN交换机1交换机的imac为2 -->
+	<forwarding_table>   <!-- 转发表 -->
+		<entry> 
+			<flowid>15</flowid> 
+			<outport>4</outport>  
+		</entry> 		
+	</forwarding_table>
+	
+	<gate_control_list_table> 
+		<port_id>2</port_id><!-- 0号端口门控表 -->
+		<entry>
+			<time_slot>0</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>1</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>2</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>3</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>	
+	</gate_control_list_table>
+</switch>
+
+</network_plan_cfg>

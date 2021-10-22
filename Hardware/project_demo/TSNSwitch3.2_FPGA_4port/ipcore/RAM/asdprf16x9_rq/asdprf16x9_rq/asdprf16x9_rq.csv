@@ -1,0 +1,18 @@
+# system info asdprf16x9_rq on 2020.10.17.13:15:26
+system_info:
+name,value
+DEVICE,10AX048H2F34I2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1602911726
+#
+#
+# Files generated for asdprf16x9_rq on 2020.10.17.13:15:26
+files:
+filepath,kind,attributes,module,is_top
+sim/asdprf16x9_rq.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,asdprf16x9_rq,true
+ram_2port_191/sim/asdprf16x9_rq_ram_2port_191_uptaery.v,VERILOG,,asdprf16x9_rq_ram_2port_191_uptaery,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+asdprf16x9_rq.ram_2port_0,asdprf16x9_rq_ram_2port_191_uptaery

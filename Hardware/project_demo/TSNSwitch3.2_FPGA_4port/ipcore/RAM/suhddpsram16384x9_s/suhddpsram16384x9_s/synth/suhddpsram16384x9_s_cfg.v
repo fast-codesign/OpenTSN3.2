@@ -1,0 +1,5 @@
+config suhddpsram16384x9_s_cfg;
+		design suhddpsram16384x9_s;
+		instance suhddpsram16384x9_s.ram_2port_0 use suhddpsram16384x9_s_ram_2port_191.suhddpsram16384x9_s_ram_2port_191_emqbfsi;
+endconfig
+

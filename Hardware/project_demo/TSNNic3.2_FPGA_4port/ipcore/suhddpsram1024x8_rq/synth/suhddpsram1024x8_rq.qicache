@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='us-ascii'?>
 <qsys_generation_info>
-<qsys_file path="F:/OpenTSN_V3.2/TSNNic_V3.2/project/TSNNic_V3.2.4.20210918/ipcore/suhddpsram1024x8_rq.qsys" />
-<gen_dir path="F:/OpenTSN_V3.2/TSNNic_V3.2/project/TSNNic_V3.2.4.20210918/ipcore/suhddpsram1024x8_rq/" />
+<qsys_file path="C:/share/zyc/OpenTSN3.2/Hardware/project_demo/TSNNic3.2_FPGA_4port/ipcore/suhddpsram1024x8_rq.qsys" />
+<gen_dir path="C:/share/zyc/OpenTSN3.2/Hardware/project_demo/TSNNic3.2_FPGA_4port/ipcore/suhddpsram1024x8_rq/" />
 <user_regen_policy value="Never Regenerate Existing IP" />
 <actual_regen_policy value="Never Regenerate Existing IP" />
 <gen_action value="IP Generation Skipped" />

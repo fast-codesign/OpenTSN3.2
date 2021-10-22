@@ -198,7 +198,7 @@ wire           [7:0]       wv_gate_ctrl_vector_qgc2nos;
 wire           [2:0]       wv_schqueue_id_nos2niq;  
 wire                       w_schqueue_id_wr_nos2niq;
 
-muxtiplex muxtiplex_inst(
+descriptor_selecting descriptor_selecting_inst(
 
 .i_clk                   (i_clk),
 .i_rst_n                 (i_rst_n),
