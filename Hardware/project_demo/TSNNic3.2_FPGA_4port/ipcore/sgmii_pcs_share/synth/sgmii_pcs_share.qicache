@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='us-ascii'?>
-<qsys_generation_info>
-<qsys_file path="C:/Users/123/Desktop/cxh/openTSN_2.0/Hardware/project_demo/TSNSWITCH2.0_4port/ipcore/sgmii_pcs_share.qsys" />
-<gen_dir path="C:/Users/123/Desktop/cxh/openTSN_2.0/Hardware/project_demo/TSNSWITCH2.0_4port/ipcore/sgmii_pcs_share/" />
-<user_regen_policy value="Never Regenerate Existing IP" />
-<actual_regen_policy value="Never Regenerate Existing IP" />
-<gen_action value="IP Generation Skipped" />
-<gen_status value="IP Generation Succeeded" />
-</qsys_generation_info>

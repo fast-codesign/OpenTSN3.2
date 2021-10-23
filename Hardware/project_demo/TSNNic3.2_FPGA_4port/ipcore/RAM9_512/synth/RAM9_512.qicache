@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='us-ascii'?>
-<qsys_generation_info>
-<qsys_file path="F:/prj/tsnnic 3.1/TSNNic3.1_FPGA_2port_02/rtl/ip/RAM512_9/RAM9_512.qsys" />
-<gen_dir path="F:/prj/tsnnic 3.1/TSNNic3.1_FPGA_2port_02/rtl/ip/RAM512_9/RAM9_512/" />
-<user_regen_policy value="Never Regenerate Existing IP" />
-<actual_regen_policy value="Never Regenerate Existing IP" />
-<gen_action value="IP Generation Skipped" />
-<gen_status value="IP Generation Succeeded" />
-</qsys_generation_info>

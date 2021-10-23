@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='us-ascii'?>
-<qsys_generation_info>
-<qsys_file path="D:/zyc/OpenTSN3.1/Hardware/project_demo/TSNSwitch3.1_FPGA_4port/ipcore/dcm_fifo9x256.qsys" />
-<gen_dir path="D:/zyc/OpenTSN3.1/Hardware/project_demo/TSNSwitch3.1_FPGA_4port/ipcore/dcm_fifo9x256/" />
-<user_regen_policy value="Never Regenerate Existing IP" />
-<actual_regen_policy value="Never Regenerate Existing IP" />
-<gen_action value="IP Generation Skipped" />
-<gen_status value="IP Generation Succeeded" />
-</qsys_generation_info>

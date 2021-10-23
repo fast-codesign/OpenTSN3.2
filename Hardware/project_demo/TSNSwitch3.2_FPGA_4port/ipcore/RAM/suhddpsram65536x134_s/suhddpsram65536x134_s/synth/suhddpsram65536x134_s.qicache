@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='us-ascii'?>
-<qsys_generation_info>
-<qsys_file path="F:/prj/tsnswitch3.2/TSNSwitch_4port_v3.2.3.20210907/rtl/IP/ram/suhddpsram65536x134_s/suhddpsram65536x134_s.qsys" />
-<gen_dir path="F:/prj/tsnswitch3.2/TSNSwitch_4port_v3.2.3.20210907/rtl/IP/ram/suhddpsram65536x134_s/suhddpsram65536x134_s/" />
-<user_regen_policy value="Never Regenerate Existing IP" />
-<actual_regen_policy value="Never Regenerate Existing IP" />
-<gen_action value="IP Generation Skipped" />
-<gen_status value="IP Generation Succeeded" />
-</qsys_generation_info>
