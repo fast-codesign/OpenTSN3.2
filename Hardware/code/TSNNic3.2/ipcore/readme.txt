@@ -1,5 +1,5 @@
 ﻿因针对不同的平台或者不同的FPGA器件，所使用的IP核生成存在差异，所以IP核文件需要用户自行依据提供的IP核配置参数去生成IP核.
-TSN网卡硬件核心代码中总共使用到12个IP核文件，IP核详细配置参数如下：
+TSN网卡硬件核心代码中总共使用到15个IP核文件，IP核详细配置参数如下：
 （1）IP核:2-port RAM
     ipcore_name:asdprf16x8_rq
     Operation Mode:With one read port and one write port
@@ -115,5 +115,33 @@ TSN网卡硬件核心代码中总共使用到12个IP核文件，IP核详细配�
     Output aclrs:"q_a port" and "q_b port" are both selected
     Others:default
 
+（13）IP核:2-port RAM
+    ipcore_name: sdprf16x24s
+    Operation Mode:With one read port and one write port
+    Ram_width:24
+    Ram_depth:16
+    Clocking method : Single
+    Create a 'rden' read enable signal:selected
+    Read input aclrs:selected
+    Others:default
 
+（14）IP核:2-port RAM
+    ipcore_name: sdprf512x57_s
+    Operation Mode:With one read port and one write port
+    Ram_width:57
+    Ram_depth:512
+    Clocking method : Single
+    Create a 'rden' read enable signal:selected
+    Read input aclrs:selected
+    Others:default
+	
+（15）IP核:2-port RAM
+    Ip_core_name: suhddpsram1024x8_rq
+    Operation Mode:With two read/write ports
+    Ram_width:8
+    Ram_depth:1024
+    Clocking method : Single
+    Create 'rden_a' and 'read_b' read enable signal:selected
+    Output aclrs:"q_a port" and "q_b port" are both selected
+    Others:default	
 

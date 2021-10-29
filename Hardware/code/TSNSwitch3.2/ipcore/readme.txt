@@ -1,5 +1,5 @@
 ﻿因针对不同的平台或者不同的FPGA器件，所使用的IP核生成存在差异，所以IP核文件需要用户自行依据提供的IP核配置参数去生成IP核。
-TSN交换机硬件核心代码中总共使用到10个IP核文件，IP核详细配置参数如下：
+TSN交换机硬件核心代码中总共使用到13个IP核文件，IP核详细配置参数如下：
 （1）IP核:2-port RAM
     Ip_core_name: asdprf16x8_rq
     Operation Mode:With one read port and one write port
@@ -95,4 +95,32 @@ TSN交换机硬件核心代码中总共使用到10个IP核文件，IP核详细�
     Clock for reading and writing the FIFO : synchronize both reading and writing to 'clock'.
     Read access:show_ahead synchronous FIFO mode
     Reset:Asynchronous clear
+    Others:default
+
+（11）IP核: FIFO
+    Ip_core_name: fifo_w61xd32
+    Fifo_width:61
+    Fifo_depth:32
+    Clock for reading and writing the FIFO : synchronize both reading and writing to 'clock'.
+    Read access:show_ahead synchronous FIFO mode
+    Reset:Asynchronous clear
+    Others:default
+
+（12）IP核: FIFO
+    Ip_core_name: fifo_w14xd16
+    Fifo_width:14
+    Fifo_depth:16
+    Clock for reading and writing the FIFO : synchronize both reading and writing to 'clock'.
+    Read access:show_ahead synchronous FIFO mode
+    Reset:Asynchronous clear
+    Others:default
+
+（13）IP核: 2-port RAM
+    Ip_core_name: suhddpsram32x57
+    Operation Mode:With two read/write ports
+    Ram_width:57
+    Ram_depth:32
+    Clocking method : Single
+    Create 'rden_a' and 'read_b' read enable signal:selected
+    Output aclrs:"q_a port" and "q_b port" are both selected
     Others:default

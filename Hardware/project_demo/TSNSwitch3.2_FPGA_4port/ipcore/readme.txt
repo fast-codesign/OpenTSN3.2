@@ -1,4 +1,4 @@
-TSN交换机示例工程使用的quartus版本为Quartus Prime Standard Edition 19.1，使用的FPGA型号为Intel Arria10:10AX048H2F34E2SG，硬件逻辑源码（包括核心代码、器件相关代码和接口相关代码）中总共使用到12个ip核文件，用户在搭建TSN交换机示例工程时，可根据下面的IP核配置参数说明信息来生成对应IP核，并将所有IP核的QSYS文件放置在当前路径下。
+TSN交换机示例工程使用的quartus版本为Quartus Prime Standard Edition 19.1，使用的FPGA型号为Intel Arria10:10AX048H2F34E2SG，硬件逻辑源码（包括核心代码、器件相关代码和接口相关代码）中总共使用到15个ip核文件，用户在搭建TSN交换机示例工程时，可根据下面的IP核配置参数说明信息来生成对应IP核，并将所有IP核的QSYS文件放置在当前路径下。
 IP核配置参数说明信息如下：
 （1）IP核：altera_iopll 
     ipcore_name:clk125M_50M125M
@@ -128,3 +128,33 @@ IP核配置参数说明信息如下：
     Read access:show_ahead synchronous FIFO mode
     Reset:Asynchronous clear
     Others:default
+
+
+（13）IP核: FIFO
+    Ip_core_name: fifo_w61xd32
+    Fifo_width:61
+    Fifo_depth:32
+    Clock for reading and writing the FIFO : synchronize both reading and writing to 'clock'.
+    Read access:show_ahead synchronous FIFO mode
+    Reset:Asynchronous clear
+    Others:default
+
+（14）IP核: FIFO
+    Ip_core_name: fifo_w14xd16
+    Fifo_width:14
+    Fifo_depth:16
+    Clock for reading and writing the FIFO : synchronize both reading and writing to 'clock'.
+    Read access:show_ahead synchronous FIFO mode
+    Reset:Asynchronous clear
+    Others:default
+
+（15）IP核: 2-port RAM
+    Ip_core_name: suhddpsram32x57
+    Operation Mode:With two read/write ports
+    Ram_width:57
+    Ram_depth:32
+    Clocking method : Single
+    Create 'rden_a' and 'read_b' read enable signal:selected
+    Output aclrs:"q_a port" and "q_b port" are both selected
+    Others:default
+
