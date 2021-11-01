@@ -98,7 +98,7 @@ TSN交换机硬件核心代码中总共使用到13个IP核文件，IP核详细�
     Others:default
 
 （11）IP核: FIFO
-    Ip_core_name: fifo_w61xd32
+    Ip_core_name: fifo_w61d32
     Fifo_width:61
     Fifo_depth:32
     Clock for reading and writing the FIFO : synchronize both reading and writing to 'clock'.
